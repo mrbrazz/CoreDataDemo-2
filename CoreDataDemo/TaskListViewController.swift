@@ -11,7 +11,7 @@ import CoreData
 class TaskListViewController: UITableViewController {
 	
 	//MARK: - Private Properties
-	private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+	private let context = CoreDataManager.shared.persistentContainer.viewContext
 	private let cellID = "cell"
 	private var taskList: [Task] = []
 	
@@ -86,9 +86,6 @@ class TaskListViewController: UITableViewController {
 		
 		navigationController?.navigationBar.tintColor = .white
 	}
-	
-	
-	
 	
 	@objc private func addNewTask() {
 		showAlert(with: "New Task", and: "What do you want to do?")
@@ -175,46 +172,14 @@ class TaskListViewController: UITableViewController {
 	}
 	
 	private func save(_ taskName: String) {
-		guard let entiyDescription = NSEntityDescription.entity(forEntityName: "Task", in: context) else {
+		guard let tesk = CoreDataManager.shared.save(taskName) else {
 			return
 		}
-		guard let task = NSManagedObject(entity: entiyDescription, insertInto: context) as? Task else { return
-		}
-		task.name = taskName
-		taskList.append(task)
-		
+		taskList.append(tesk
+		)
 		let cellIndex = IndexPath(row: taskList.count - 1, section: 0)
 		tableView.insertRows(at: [cellIndex], with: .automatic)
-		
-		if context.hasChanges {
-			do {
-				try context.save()
-			} catch let error {
-				print(error.localizedDescription)
-			}
-		}
 	}
-	
-//	private func delete(_ taskName: String) {
-//		guard let entiyDescription = NSEntityDescription.entity(forEntityName: "Task", in: context) else {
-//			return
-//		}
-//		guard let task = NSManagedObject(entity: entiyDescription, insertInto: context) as? Task else { return
-//		}
-//		task.name = taskName
-//		taskList.remove(at: <#T##Int#>)
-//
-//		let cellIndex = IndexPath(row: taskList.count - 1, section: 0)
-//		tableView.insertRows(at: [cellIndex], with: .automatic)
-//
-//		if context.hasChanges {
-//			do {
-//				try context.save()
-//			} catch let error {
-//				print(error.localizedDescription)
-//			}
-//		}
-//	}
 }
 
 extension TaskListViewController {

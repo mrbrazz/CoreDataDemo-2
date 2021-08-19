@@ -12,6 +12,7 @@
 		0687A8FE26CAD1FA004EA708 /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0687A8FC26CAD1FA004EA708 /* CoreDataDemo.xcdatamodeld */; };
 		0687A90026CAD1FC004EA708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0687A8FF26CAD1FC004EA708 /* Assets.xcassets */; };
 		0687A90326CAD1FC004EA708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0687A90126CAD1FC004EA708 /* LaunchScreen.storyboard */; };
+		D672440A26CDA6A4007F91A3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D672440926CDA6A4007F91A3 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0687A8FF26CAD1FC004EA708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0687A90226CAD1FC004EA708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0687A90426CAD1FC004EA708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D672440926CDA6A4007F91A3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				0687A8F326CAD1FA004EA708 /* AppDelegate.swift */,
 				0687A8F726CAD1FA004EA708 /* TaskListViewController.swift */,
+				D672440926CDA6A4007F91A3 /* CoreDataManager.swift */,
 				0687A8FF26CAD1FC004EA708 /* Assets.xcassets */,
 				0687A90126CAD1FC004EA708 /* LaunchScreen.storyboard */,
 				0687A90426CAD1FC004EA708 /* Info.plist */,
@@ -135,6 +138,7 @@
 			files = (
 				0687A8F826CAD1FA004EA708 /* TaskListViewController.swift in Sources */,
 				0687A8FE26CAD1FA004EA708 /* CoreDataDemo.xcdatamodeld in Sources */,
+				D672440A26CDA6A4007F91A3 /* CoreDataManager.swift in Sources */,
 				0687A8F426CAD1FA004EA708 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
